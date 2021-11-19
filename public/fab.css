@@ -23,7 +23,7 @@
 	color: var(--bgcolor);
 }
 .fab:hover {
-	background-color: var(--bgcolor-100);
+	background-color: var(--bgcolor-400);
 	color: var(--tcolor);
 }
 .fab:hover .material-icons {

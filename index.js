@@ -30,10 +30,24 @@ app.get('/add', (req, res) => {
     res.render('add');
 })
 app.get('/about', (req, res) => {
-    res.render('about', { startingContent: aboutContent });
+    res.render('about', { startingContent: aboutContent, dir: req.get('host') });
 })
 app.get('/contact', (req, res) => {
     res.render('contact', { author: author });
+})
+app.get('/api/posts', (req, res) => {
+    res.json(posts);
+})
+app.get('/api/posts/:id', (req, res) => {
+    let id = +req.params.id;
+    if (id < posts.length) {
+        let post = posts[id];
+        res.json(post);
+    }
+    else res.json({
+        status: 404,
+        message: "Post Not Found"
+    })
 })
 app.post('/add', (req, res) => {
     let post = {

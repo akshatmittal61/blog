@@ -109,6 +109,7 @@ img {
 .card-social-label,
 .fab,
 .add-post,
+.about-image,
 .material-icons,
 .container h1,
 button,
@@ -141,7 +142,7 @@ main {
 	font-size: 24px;
 	line-height: 4rem;
 }
-.add-post>*{
+.add-post > * {
 	margin: 3rem 0;
 }
 

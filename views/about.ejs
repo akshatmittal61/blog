@@ -1,8 +1,68 @@
 <%- include("partials/header") -%>
 
-    <h1>About Page</h1>
-    <p>
-        <%= startingContent %>
-    </p>
+    <div class="about">
+        <div class="about-image">
+            <img src="/images/favicon.svg" alt="Blogger">
+        </div>
+        <div class="about-container">
+            <h1>About Blogger</h1>
+            <section>
+                <h2>Introduction</h2>
+                <p>
+                    Blogger is a full stack web application built in plain HTML and CSS.
+                    <br />
+                    Runtime used in backend: <a target="_blank" href="https://nodejs.org/">Node.js</a>
+                    <br />
+                    Backend framework: <a target="_blank" href="https://expressjs.com/">Express</a>
+                    <br />
+                    Templating Engine: <a target="_blank" href="https://ejs.co/">EJS</a>
+                    <br />
+                </p>
+            </section>
+            <section>
+                <h2>Navigation</h2>
+                <h4>
+                    <a href="/">Home Page</a>
+                </h4>
+                <p>
+                    Home Page contains all your blogs. The posts will be truncated to just the initial words. To read
+                    the whole blog, click on the read more link at the bottom of any post.
+                </p>
+                <br />
+                <h4>
+                    <a href="/contact">Contact the Developer</a>
+                </h4>
+                <p>
+                    To contact the developer, go to the contact us page and connect with them at different social
+                    platforms
+                </p>
+                <br />
+            </section>
+            <section>
+                <h2>API</h2>
+                <pre class=" language-javascript">
+                <code id="example" class=" language-javascript">
+                <span class="token function">fetch</span><span class="token punctuation">(</span><span class="token string"><%= `${dir}/api/posts` %></span><span class="token punctuation">)</span>
+                    <span class="token punctuation">.</span><span class="token function">then</span><span class="token punctuation">(</span><span class="token parameter">response</span><span class="token operator">=&gt;</span>response<span class="token punctuation">.</span><span class="token function">json</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+                    <span class="token punctuation">.</span><span class="token function">then</span><span class="token punctuation">(</span><span class="token parameter">json</span><span class="token operator">=&gt;</span>console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>json<span class="token punctuation">)</span><span class="token punctuation">)</span>
+                </code>
+                </pre>
+                <p>
+                    Blogger has an api for all the posts in the application.
+                </p>
+                <span>
+                    <a target="_blank" href="/api/posts">/api/posts</a>
+                    All Posts
+                </span>
+                <h2>
+                    Routes
+                </h2>
+                <span>
+                    GET <a target="_blank" href="/api/posts/0">/api/post/0</a>
+                    For getting a post with a particular id
+                </span>
+            </section>
+        </div>
+    </div>
 
     <%- include("partials/footer") -%>
