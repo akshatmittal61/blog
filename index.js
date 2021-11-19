@@ -29,7 +29,14 @@ app.get('/about', (req, res) => {
 })
 app.get('/contact', (req, res) => {
     console.log("Contact Us");
-    res.render('about', { startingContent: contactContent });
+    res.render('contact', { startingContent: contactContent });
+})
+app.post('/add', (req, res) => {
+    let blog = {
+        title: req.body.title,
+        content: req.body.content
+    }
+    console.log(blog);
 })
 
 const PORT = process.env.PORT || 5000;

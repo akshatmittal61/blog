@@ -1,8 +1,9 @@
-<%- include("header") -%>
+<%- include("partials/header") -%>
 
-    <h1>Compose Page</h1>
-    <p>
-        Add New Post
-    </p>
-
-    <%- include("footer") -%>
+    <h1>Add New Post</h1>
+    <form action="/add" method="post">
+        <input type="text" name="title" id="title" placeholder="Title">
+        <textarea name="content" id="content" cols="30" rows="10" placeholder="Your Thoughts Here"></textarea>
+        <button type="submit">Publish</button>
+    </form>
+    <%- include("partials/footer") -%>
