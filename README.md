@@ -1,7 +1,7 @@
 # Blogger
 
 <p align="center">
-<img src="https://raw.githubusercontent.com/akshatmittal61/blog/master/public/images/favicon.png" alt="Blogger" />
+<img src="https://raw.githubusercontent.com/akshatmittal61/blog/master/public/images/favicon.png" alt="Blogger" width="200" height="200" />
 </p>
 
 ## Introduction
@@ -10,7 +10,6 @@
 Blogger is a full stack web application built in plain HTML and CSS.
 </p>
 <p>
-<br />
 Runtime used in backend: <a href="https://nodejs.org/">Node.js</a>
 <br />
 Backend framework: <a href="https://expressjs.com/">Express</a>
@@ -30,7 +29,7 @@ Templating Engine: <a href="https://ejs.co/">EJS</a>
 </p>
 <br />
 <h4>
-    Contact the Developer
+    <a href="https://github.com/akshatmittal61">Contact the Developer</a>
 </h4>
 <p>
     To contact the developer, go to the contact us page and connect with them at different social
