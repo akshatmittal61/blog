@@ -1,0 +1,64 @@
+form {
+	justify-content: space-evenly;
+	flex-flow: column;
+	padding: 3rem 5rem;
+	border-radius: 10px;
+	border: 2.5px solid var(--tcolor-100);
+	width: 70%;
+	height: 70%;
+	margin: 2rem auto;
+}
+button {
+	background: transparent;
+	color: inherit;
+	border: none;
+	outline: none;
+	cursor: pointer;
+	user-select: none;
+	margin: 0.25rem 0.5rem;
+	padding: 0.825rem 1.375rem;
+	outline: 0 solid transparent;
+	border-radius: 5px;
+	transition: all var(--transition-time) ease-in-out;
+	background-color: var(--bgcolor-100);
+	color: var(--tcolor);
+}
+button:hover {
+	background-color: var(--bgcolor-400);
+	color: var(--tcolor-100);
+}
+button:active,
+button:focus,
+button:focus-visible,
+button:focus-within {
+	background-color: var(--bgcolor-700);
+	color: var(--tcolor);
+}
+input,
+textarea {
+	background: transparent;
+	color: inherit;
+	font: inherit;
+	border: none;
+	outline: none;
+	outline: 3px solid transparent;
+	border-radius: 5px;
+	margin: 0.75rem;
+	padding: 0.75rem;
+	background-color: var(--back-shadow-light);
+	transition: all var(--transition-time) ease;
+	width: 100%;
+	resize: none;
+}
+input:active,
+textarea:active,
+input:focus,
+textarea:focus {
+	border: none;
+	background-color: var(--back-shadow-light);
+	outline: 3px solid var(--back-shadow);
+}
+input::placeholder,
+textarea::placeholder {
+	font-size: 0.875rem;
+}
