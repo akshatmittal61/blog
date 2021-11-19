@@ -1,0 +1,119 @@
+.card {
+	width: 80%;
+	height: 100vh;
+	margin: 2rem;
+}
+.card-frame {
+	font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
+		Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+	height: 100%;
+	width: 100%;
+	margin: 0.25rem;
+	padding: 0.5rem 0.25rem;
+	border-radius: 10px;
+	background: linear-gradient(90deg, var(--green) 4%, var(--blue) 0%) top/100%
+			34% no-repeat,
+		linear-gradient(90deg, var(--yellow) 50%, var(--blue) 0%) top/100% 82%
+			no-repeat,
+		linear-gradient(90deg, var(--yellow) 10%, var(--red) 0%) top/100% 100%;
+	box-shadow: 0 10px 15px rgba(60, 64, 67, 0.3);
+}
+.card-box {
+	position: relative;
+	height: 99%;
+	width: 99%;
+	padding: 0;
+	border-radius: 10px;
+	background-color: var(--bgcolor);
+	justify-content: flex-start;
+	flex-flow: column;
+	overflow: hidden;
+}
+.card-head {
+	width: 100%;
+	height: 50%;
+	justify-content: space-evenly;
+	position: relative;
+	z-index: 5;
+	overflow: hidden;
+}
+@media (max-width: 672px) {
+	.card-head {
+		flex-flow: column;
+	}
+}
+.card-image {
+	width: 35%;
+	height: 100%;
+}
+@media (max-width: 672px) {
+	.card-image {
+		margin: 0.5rem 0 0 0;
+		width: 100%;
+		height: 40%;
+	}
+}
+.card-image img {
+	object-fit: cover;
+	max-width: 70%;
+	max-height: 70%;
+	border-radius: 500px;
+	outline: 7.5px solid var(--bgcolor);
+}
+@media (max-width: 672px) {
+	.card-image img {
+		max-width: 90%;
+		max-height: 90%;
+	}
+}
+.card-head::before {
+	width: 100%;
+	height: 100%;
+	content: "";
+	position: absolute;
+	z-index: -1;
+	clip-path: polygon(0 0, 100% 0, 100% 50%, 0 50%);
+	background-color: #e1bee7;
+	background: linear-gradient(to right, #bbdefb, #29b6f6);
+}
+@media (max-width: 672px) {
+	.card-head::before {
+		clip-path: polygon(0 0, 100% 0, 100% 30%, 0 30%);
+	}
+}
+.card-name {
+	font-size: 2rem;
+	color: var(--tcolor-100);
+	height: 40%;
+	white-space: nowrap;
+	overflow: visible;
+}
+.card-content {
+	width: 80%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-flow: column;
+}
+.card-social {
+	width: 100%;
+	height: 25%;
+	display: flex;
+	justify-content: flex-start;
+	align-items: center;
+}
+.card-social > * {
+	padding: 1rem 1rem;
+	height: 100%;
+    border: 0.5px solid var(--back-shadow);
+}
+.card-social a:hover{
+    text-decoration: underline;
+}
+.card-social-label {
+	width: 20%;
+    background-color: var(--bgcolor-100);
+}
+.card-social-content {
+	width: 80%;
+}

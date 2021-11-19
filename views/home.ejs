@@ -5,16 +5,18 @@
         <%= startingContent %>
     </p>
     <div class="posts-container">
-        <% for(let i=0;i<posts.length;++i){posts[i] %>
+        <% posts.forEach((post)=>{ %>
             <div class="post">
                 <h3 class="post-title">
-                    <%= posts[i].title %>
+                    <a href=<%= `/posts/${post.id}` %> >
+                        <%= post.title %>
+                    </a>
                 </h3>
                 <div class="post-content">
-                    <%= posts[i].content %>
+                    <%= post.content %>
                 </div>
             </div>
-            <% } %>
+            <% }) %>
     </div>
 
     <%- include("partials/footer") -%>
