@@ -23,6 +23,34 @@
 	--yellow: #fbbc05;
 	--green: #34a853;
 }
+.light {
+	--bgcolor: #f0f0f0;
+	--bgcolor-100: #e1e1e1;
+	--bgcolor-400: #d2d2d2;
+	--bgcolor-700: #c3c3c3;
+
+	--tcolor: #121212;
+	--tcolor-100: #333333;
+	--tcolor-400: #272727;
+	--tcolor-700: #1d1d1d;
+
+	--back-shadow: rgba(0, 0, 0, 0.2);
+	--back-shadow-light: rgba(0, 0, 0, 0.1);
+}
+.dark {
+	--bgcolor: #121212;
+	--bgcolor-100: #333333;
+	--bgcolor-400: #272727;
+	--bgcolor-700: #1d1d1d;
+
+	--tcolor: #f0f0f0;
+	--tcolor-100: #e1e1e1;
+	--tcolor-400: #d2d2d2;
+	--tcolor-700: #c3c3c3;
+
+	--back-shadow: rgba(255, 255, 255, 0.2);
+	--back-shadow-light: rgba(255, 255, 255, 0.1);
+}
 html {
 	font-size: 16px;
 }
@@ -40,6 +68,8 @@ body {
 	word-spacing: 0.25rem;
 	line-height: 1.25rem;
 	overflow-x: hidden;
+	overflow-y: auto;
+	transition: all var(--transition-time) ease-in-out;
 }
 a,
 a:visited {
@@ -47,6 +77,7 @@ a:visited {
 	color: inherit;
 	border: none;
 	outline: none;
+	user-select: none;
 }
 a:hover,
 a:active,
@@ -77,6 +108,7 @@ img {
 .card-frame,
 .card-social-label,
 .fab,
+.add-post,
 .material-icons,
 .container h1,
 button,
@@ -101,6 +133,16 @@ main {
 .container h1 {
 	width: 100%;
 	padding: 1rem 0;
+}
+.add-post {
+	width: 100%;
+	height: 100%;
+	flex-flow: column;
+	font-size: 24px;
+	line-height: 4rem;
+}
+.add-post>*{
+	margin: 3rem 0;
 }
 
 ::-webkit-scrollbar {
@@ -127,4 +169,16 @@ main {
 
 .dispn {
 	display: none !important;
+}
+
+@keyframes rotate {
+	0% {
+		transform: rotate(0deg);
+	}
+	100% {
+		transform: rotate(360deg);
+	}
+	/* 100% {
+		transform: rotate(0deg);
+	} */
 }

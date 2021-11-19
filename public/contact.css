@@ -76,6 +76,9 @@
 	background-color: #e1bee7;
 	background: linear-gradient(to right, #bbdefb, #29b6f6);
 }
+body.dark .card-head::before {
+	background: linear-gradient(to right, #512da8, #5c6bc0);
+}
 @media (max-width: 672px) {
 	.card-head::before {
 		clip-path: polygon(0 0, 100% 0, 100% 30%, 0 30%);
@@ -105,14 +108,14 @@
 .card-social > * {
 	padding: 1rem 1rem;
 	height: 100%;
-    border: 0.5px solid var(--back-shadow);
+	border: 0.5px solid var(--back-shadow);
 }
-.card-social a:hover{
-    text-decoration: underline;
+.card-social a:hover {
+	text-decoration: underline;
 }
 .card-social-label {
 	width: 20%;
-    background-color: var(--bgcolor-100);
+	background-color: var(--bgcolor-100);
 }
 .card-social-content {
 	width: 80%;

@@ -1,23 +1,26 @@
 <%- include("partials/header") -%>
 
-    <h1>Home Page</h1>
-    <p>
-        <%= startingContent %>
-    </p>
-    <div class="posts-container">
-        <% posts.forEach((post)=>{ %>
-            <div class="post">
-                <h3 class="post-title">
-                    <a href=<%= `/posts/${post.id}` %> >
-                        <%= post.title %>
-                    </a>
-                </h3>
-                <div class="post-content incomplete">
-                    <%= post.content %>
+    <% if(posts.length>0){ %>
+        <div class="posts-container">
+            <% posts.forEach((post)=>{ %>
+                <div class="post">
+                    <h3 class="post-title">
+                        <a href=<%=`/posts/${post.id}` %> >
+                            <%= post.title %>
+                        </a>
+                    </h3>
+                    <div class="post-content incomplete">
+                        <%= post.content %>
+                    </div>
+                    <a class="post-link" target="_blank" href=<%=`/posts/${post.id}` %>>Read More</a>
                 </div>
-                <a class="post-link" target="_blank" href=<%=`/posts/${post.id}` %>>Read More</a>
+                <% }) %>
+        </div>
+        <% } else { %>
+            <div class="add-post">
+                <h1>No Posts Yet</h1>
+                <h3>Click on Add Button to add a new post</h3>
             </div>
-            <% }) %>
-    </div>
+            <% } %>
 
-    <%- include("partials/footer") -%>
+                <%- include("partials/footer") -%>
