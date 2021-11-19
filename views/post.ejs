@@ -1,0 +1,16 @@
+<%- include("partials/header") -%>
+
+    <div class="posts-container">
+        <div class="post">
+            <h3 class="post-title">
+                <a href=<%=`/posts/${post.id}` %> >
+                    <%= post.title %>
+                </a>
+            </h3>
+            <div class="post-content">
+                <%= post.content %>
+            </div>
+        </div>
+    </div>
+
+    <%- include("partials/footer") -%>

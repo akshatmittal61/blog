@@ -1,8 +1,8 @@
 import express from 'express'
 import bodyParser from 'body-parser'
-import ejs from 'ejs'
 import { fileURLToPath } from 'url'
-import { dirname } from 'path';
+import _ from 'lodash';
+import path, { dirname } from 'path';
 const __fileName = fileURLToPath(import.meta.url);
 const __dirname = dirname(__fileName);
 const app = express();
@@ -23,7 +23,7 @@ const author = {
 
 app.set("view engine", "ejs");
 app.use(bodyParser.urlencoded({ extended: true }));
-app.use(express.static("public"));
+app.use(express.static(path.join(__dirname, 'public')));
 
 app.get('/', (req, res) => {
     res.render('home', {
@@ -49,10 +49,30 @@ app.post('/add', (req, res) => {
     posts = [...posts, post];
     res.redirect('/');
 })
-app.get('/posts/:post', (req, res) => {
-    let id = +req.params.post;
-    let post = posts[id];
-    res.json(post);
+app.get('/post/:post', (req, res) => {
+    let name = req.params.post;
+    let condition = false;
+    posts.map(post => {
+        if (_.kebabCase(post.title) === _.kebabCase(name)) {
+            condition = true;
+            res.render('post', { post: post });
+        }
+    })
+    if (!condition) res.json({
+        status: 404,
+        message: "Post Not Found"
+    })
+})
+app.get('/posts/:id', (req, res) => {
+    let id = +req.params.id;
+    if (id < posts.length) {
+        let post = posts[id];
+        res.render('post', { post: post });
+    }
+    else res.json({
+        status: 404,
+        message: "Post Not Found"
+    })
 })
 
 const PORT = process.env.PORT || 5000;
