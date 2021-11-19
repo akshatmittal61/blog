@@ -16,8 +16,20 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.use(express.static("public"));
 
 app.get('/', (req, res) => {
-    console.log("Server started");
-    res.render('home');
+    console.log("Home Page");
+    res.render('home', { startingContent: homeContent });
+})
+app.get('/add', (req, res) => {
+    console.log("Add New Post");
+    res.render('add');
+})
+app.get('/about', (req, res) => {
+    console.log("About Page");
+    res.render('about', { startingContent: aboutContent });
+})
+app.get('/contact', (req, res) => {
+    console.log("Contact Us");
+    res.render('about', { startingContent: contactContent });
 })
 
 const PORT = process.env.PORT || 5000;
