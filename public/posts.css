@@ -26,6 +26,20 @@
 .post-title {
 	width: 100%;
 	padding: 0.5rem 0.25rem;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+.post-delete{
+	padding: 0.35rem;
+	transition: all var(--transition-time) ease-in-out;
+	border-radius: 500px;
+}
+.post-delete:hover{
+	background-color: var(--bgcolor-400);
+}
+.post-delete:active,.post-delete:focus{
+	background-color: var(--bgcolor-700);
 }
 .post-content {
 	width: 100%;

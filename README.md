@@ -21,7 +21,7 @@ Templating Engine: <a href="https://ejs.co/">EJS</a>
 ## Navigation
 
 <h4>
-    Home Page
+<a href="https://afternoon-shore-21057.herokuapp.com/">Home Page</a>
 </h4>
 <p>
     Home Page contains all your blogs. The posts will be truncated to just the initial words. To read

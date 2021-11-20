@@ -8,6 +8,11 @@
                         <a href=<%=`/posts/${post.id}` %> >
                             <%= post.title %>
                         </a>
+                        <form action=<%=`/posts/${post.id}/delete` %> method="post">
+                            <button type="submit" class="post-delete">
+                                <span class="material-icons">delete</span>
+                            </button>
+                        </form>
                     </h3>
                     <div class="post-content incomplete">
                         <%= post.content %>

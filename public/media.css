@@ -2,6 +2,9 @@
 	.nav-link .nav-link-text {
 		display: none;
 	}
+	.header-logo span {
+		display: none;
+	}
 	.post {
 		width: 44%;
 	}
@@ -28,6 +31,9 @@
 	.nav-link .nav-link-text {
 		display: none;
 	}
+	.header-logo span {
+		display: none;
+	}
 	.posts-container {
 		width: 95%;
 	}
@@ -38,26 +44,26 @@
 		height: 120vh;
 		font-size: 14px;
 	}
-	.card-frame{
+	.card-frame {
 		padding: 0.25rem;
 	}
 	.card-head {
 		height: 55%;
 	}
-	.card-image{
+	.card-image {
 		height: 50%;
 	}
-	.card-name{
+	.card-name {
 		height: 15%;
 	}
 	.card-content {
 		margin: auto;
 	}
-	.card-social{
+	.card-social {
 		flex-flow: column;
 		margin: 0.5rem 0;
 	}
-	.card-social > *{
+	.card-social > * {
 		padding: 0.75rem;
 		width: 100%;
 		overflow: hidden;

@@ -8,8 +8,15 @@
 }
 .header-left,
 .footer-left {
-	width: 15%;
+	width: 25%;
 	height: 100%;
+	font-size: 2rem;
+	display: flex;
+	justify-content: flex-end;
+	align-items: center;
+}
+.header-logo img{
+	margin: 0 3rem 0 0;
 }
 .header-logo,
 .footer-logo {
