@@ -45,7 +45,6 @@ app.get("/", (req, res) => {
 			data.forEach((item) => {
 				itemsToSend = [...itemsToSend, item];
 			});
-			console.log(itemsToSend);
 			res.render("home", { posts: itemsToSend });
 		}
 	});
@@ -100,25 +99,10 @@ app.post("/post/:id/delete", (req, res) => {
 			console.log({
 				status: 200,
 				message: "Item deleted successfully",
-				blog: { ...itemToDel },
+				blog: data,
 			});
 	});
 	res.redirect("/");
-	// let itemToDel = {};
-	/* if (id < posts.length) {
-		newArray = posts.filter((post) => post.id !== id);
-		newArray.map((post, index) => {
-			post.id = index;
-		});
-		posts = [...newArray];
-		res.redirect("/");
-	} else
-		res.json({
-			status: 404,
-			message: "Post Not Found",
-		}); */
-	// Item.find({},(err))
-	// Item.findByIdAndDelete(id,(err)=>{})
 });
 
 const PORT = process.env.PORT || 5000;
