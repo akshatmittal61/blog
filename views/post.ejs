@@ -3,10 +3,10 @@
     <div class="posts-container">
         <div class="post" style="width: 95%;">
             <h3 class="post-title">
-                <a href=<%=`/posts/${post.id}` %> >
+                <a href=<%=`/post/${post._id}` %> >
                     <%= post.title %>
                 </a>
-                <form action=<%=`/posts/${post.id}/delete` %> method="post">
+                <form action=<%=`/post/${post._id}/delete` %> method="post">
                     <button type="submit" class="post-delete">
                         <span class="material-icons">delete</span>
                     </button>

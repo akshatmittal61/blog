@@ -87,15 +87,23 @@ app.get("/post/:id", (req, res) => {
 		else res.render("post", { post: data });
 	});
 });
-app.get("/posts/:id", (req, res) => {
+app.post("/post/:id/delete", (req, res) => {
 	let id = req.params.id;
+	let itemToDel = {};
 	Blog.findOne({ _id: id }, (err, data) => {
 		if (err) console.log(err);
-		else res.render("post", { post: data });
+		else itemToDel = { ...data };
 	});
-});
-app.post("/posts/:id/delete", (req, res) => {
-	let id = +req.params.id;
+	Blog.findByIdAndDelete(id, (err, data) => {
+		if (err) console.log(err);
+		else
+			console.log({
+				status: 200,
+				message: "Item deleted successfully",
+				blog: { ...itemToDel },
+			});
+	});
+	res.redirect("/");
 	// let itemToDel = {};
 	/* if (id < posts.length) {
 		newArray = posts.filter((post) => post.id !== id);
